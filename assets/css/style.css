@@ -45,6 +45,17 @@ aside {
 
 .intro  {
     font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.icon {
+    /* height: 40vh; */
+    width: 33%;
+    
+}
+.intro p{
+    width: 50%;
 }
 .project-main {
     display: flex;
@@ -58,9 +69,10 @@ aside {
 }
 .project-main-image {
     width: 30%;
+    padding: 2%;
     max-width: 500px;
     max-height: 500px;
-    flex: 0 1 100px;
+    /* flex: 0 1 100px; */
 }
 
 @media screen and (max-width: 425px) {
@@ -76,6 +88,14 @@ aside {
         order: 1;
         flex-direction: column;
 
+    }
+    .project-main {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .project-main-image {
+        width: 100%;
+        order: -1;
     }
 }
 
