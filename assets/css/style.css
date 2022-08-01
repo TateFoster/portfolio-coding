@@ -6,6 +6,11 @@
 body {
     font-size: 62.5%;
     font-family: 'Spectral', serif;
+    line-height: 1.25;
+    background-color: #62bb6e;
+}
+:root {
+
 }
 
 header {
@@ -38,11 +43,6 @@ h1 {
 
 }
 
-aside {
-    background-color: aqua;
-    width: 25%;
-
-}
 main {
     margin: 3%;
 }
@@ -52,40 +52,63 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 .icon {
     border-radius: 100%;
     width: 33%;
+    height: auto;
     
 }
 .intro p{
-    width: 50%;
+    width: 25%;
     align-self: center;
 }
 .projects {
     display: grid;
+    grid-row: 3;
+    grid-template-columns: 20% 80%;
     font-size: 1.5rem;
 }
-.project-main {
-    grid-column-start: 2; 
+.art-aside {
+    width: 100%;
+    height: 100%;
+    grid-row: span 1/3;
+}
+.project-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+.project-odd {
+    padding: 2%;
+    margin: 2%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
 }
-.description {
-    width: 70%;
+.project-even { 
+    padding: 2%;
+    margin: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
 }
-.project-main-image {
+
+.project-image-one {
+    width: 50%;
+    padding: 2%;
+}
+.project-image {
     width: 30%;
     padding: 2%;
-    max-width: 500px;
-    max-height: 500px;
-    /* flex: 0 1 100px; */
 }
 
 footer {
     font-size: 1.5rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -97,15 +120,39 @@ footer {
         align-items: center;
     }
     .icon {
+        order: -1;
         width: 70%;
     }
     .intro p {
         width: 85%;
     }
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .art-aside {
+        height: 90%;
+        margin-bottom: 0%;
+    }
+    .project-odd, .project-even {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .project-even p, .project-odd p {
+        margin-top: 2%;
+    }
+    .project-image-one {
+        width: 100%;
+        order: -1;
+    }
+    .project-image {
+        width: 75%;
+        order: -1;
+    }
 }
 @media screen and (max-width: 425px) {
     header {
-        height: 15vh;
+        height: 18vh;
         font-size: 1.5rem;
         justify-content: flex-start;
         flex-direction: column;
@@ -123,14 +170,7 @@ footer {
         flex-direction: column;
 
     }
-    .project-main {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .project-main-image {
-        width: 100%;
-        order: -1;
-    }
+
 }
 
 /* @media screen and (max-width: 320px) { 
